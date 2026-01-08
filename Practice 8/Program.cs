@@ -2,7 +2,7 @@
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
         Console.WriteLine("=== SeaDocs Document Viewer ===");
         Console.WriteLine("===       Practice 8        ===");
@@ -13,7 +13,8 @@ class Program
             if (string.IsNullOrEmpty(inputId)) break;
             try
             {
-                Client.PrintJson(Client.GetJson(inputId));
+                var rawJson = await Client.GetJsonAsync(inputId);
+                Client.PrintJson(rawJson);
             }
             catch (TaskCanceledException ex)
             {

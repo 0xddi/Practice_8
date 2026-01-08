@@ -4,15 +4,16 @@ namespace Practice_8;
 
 public class Client
 {
-    public static string GetJson(string documentId)
+    public static async Task<string> GetJsonAsync(string documentId)
     {
         string apiUrl = $"https://seadox.ru/api/seadocs/{documentId}";
+    
         using (HttpClient client = new HttpClient())
         {
             client.Timeout = TimeSpan.FromSeconds(10);
-            HttpResponseMessage response = client.GetAsync(apiUrl).Result;
+            HttpResponseMessage response = await client.GetAsync(apiUrl);
             response.EnsureSuccessStatusCode();
-            return response.Content.ReadAsStringAsync().Result;
+            return await response.Content.ReadAsStringAsync();
         }
     }
 
