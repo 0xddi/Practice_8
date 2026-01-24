@@ -13,8 +13,8 @@ public class ApiResponse
     public string? CoverUrl { get; set; }
     public string? OwnerId { get; set; }
     public string? ParentId { get; set; }
-    public string? CreatedAt { get; set; }
-    public string? UpdatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }
 
 public class Share
@@ -32,7 +32,7 @@ public class Document
     public string? CoverUrl { get; set; }
     public string? OwnerId { get; set; }
     public string? ParentId { get; set; }
-    public string? CreatedAt { get; set; }
-    public string? UpdatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }
 

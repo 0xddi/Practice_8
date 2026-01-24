@@ -39,8 +39,8 @@ public class Client
         Console.WriteLine($"Уровень доступа: {document.AccessLevel}");
         Console.WriteLine($"ID владельца: {document.OwnerId}");
         Console.WriteLine($"ID 'родителя': {document.ParentId}");
-        Console.WriteLine($"Создан: {document.CreatedAt}");
-        Console.WriteLine($"Обновлён: {document.UpdatedAt}");
+        Console.WriteLine($"Создан: {document.CreatedAt:dd.MM.yyyy HH:mm}");
+        Console.WriteLine($"Обновлён: {document.UpdatedAt:dd.MM.yyyy HH:mm}");
         Console.WriteLine($"Индексирован: {(document.IsIndexed ? "Да" : "Нет")}");
         
         if (!string.IsNullOrEmpty(document.CoverUrl))
@@ -83,7 +83,7 @@ public class Client
                 Console.WriteLine($"\n• {child.Name} (ID: {child.Id})");
                 if (!string.IsNullOrEmpty(child.Description))
                     Console.WriteLine($"  Описание: {child.Description}");
-                Console.WriteLine($"  Создан: {child.CreatedAt}");
+                Console.WriteLine($"  Создан: {child.CreatedAt:dd.MM.yyyy HH:mm}");
             }
         }
         else
